@@ -1,0 +1,9 @@
+# << FROM PANGU - BEGIN - >>
+vbell off
+defscrollback 102400
+term linux
+hardstatus alwayslastline
+hardstatus string "%{=b kg}[%-w%{=B bk}%50>%n %t%{-}%+w%<] %=%{=B rk}[%H]%{=B yk} %l %{=B bk}%c"
+defshell /bin/tcsh
+caption splitonly "%{kW}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kW}%?%+Lw%?"
+# << FROM PANGU - END - >>

@@ -68,7 +68,12 @@ setup_screen_cfg()
     if [ ! -e $HOME/.screenrc ]
     then
         cputs "Ready to setup screen"
-        cat screenrc >> $HOME/.screenrc
+        if [ $OSTYPE == "FreeBSD" ]
+        then
+            cat screenrc_fb >> $HOME/.screenrc
+        else
+            cat screenrc >> $HOME/.screenrc
+        fi
     else
         yputs "Screen config already exists!"
     fi
