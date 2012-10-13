@@ -1,0 +1,5 @@
+# << FROM PANGU - BEGIN - >>
+#HOST host
+#USER user
+#IdentityFile rsa_file
+# << FROM PANGU - END - >>
