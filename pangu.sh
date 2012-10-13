@@ -78,7 +78,12 @@ setup_tcsh_cfg()
 {
     if [ -e $HOME/.cshrc ]
     then
-        sed -i'' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.cshrc
+        if [ $OSTYPE == "FreeBSD" ]
+        then
+            sed -i '' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.cshrc
+        else
+            sed -i'' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.cshrc
+        fi
     fi
     cputs "Ready to setup tcsh"
     cat cshrc >> $HOME/.cshrc
@@ -89,7 +94,12 @@ setup_ssh_cfg()
     if [ -e $HOME/.ssh/config ]
     then
         cputs "Filtered PANGU config from $HOME/.ssh/config"
-        sed -i'' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.ssh/config
+        if [ $OSTYPE == "FreeBSD" ]
+        then
+            sed -i '' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.ssh/config
+        else
+            sed -i'' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.ssh/config
+        fi
     fi
     cputs "Ready to touch authorized_keys"
     run_cmd "touch $sshdir_path/authorized_keys"
