@@ -31,7 +31,7 @@ if ($?prompt) then
     # An interactive shell -- set some stuff up
     #set prompt = "`/bin/hostname -s`# "
     set promptchars = '$#'
-    set prompt = '%{\033[5;30;45m%}%n@%{\033[0m%}%{\033[5;30;45m%}laptop%{\033[0m%}%{\033[0m%}%{\033[1;33;40m%}%~%{\033[0m%}%#'
+    set prompt = '%{\033[5;30;45m%}%n@%{\033[0m%}%{\033[5;30;45m%}%m%{\033[0m%}%{\033[0m%}%{\033[1;33;40m%}%~%{\033[0m%}%#'
 	set filec
 	set history = 10240
 	set savehist = 10240
