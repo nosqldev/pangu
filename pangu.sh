@@ -81,12 +81,14 @@ setup_tcsh_cfg()
         if [ $OSTYPE == "FreeBSD" ]
         then
             sed -i '' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.cshrc
+            cputs "Ready to setup tcsh"
+            cat cshrc_fb >> $HOME/.cshrc
         else
             sed -i'' '/<< FROM PANGU - BEGIN - >>/,/<< FROM PANGU - END - >>/d' $HOME/.cshrc
+            cputs "Ready to setup tcsh"
+            cat cshrc >> $HOME/.cshrc
         fi
     fi
-    cputs "Ready to setup tcsh"
-    cat cshrc >> $HOME/.cshrc
 }
 
 setup_ssh_cfg()
